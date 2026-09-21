@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love You Seema & Lola 😻💕</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #3b0a2e, #120014 70%);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .heart {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      margin: 0 auto 45px;
+      transform: rotate(-45deg);
+      background: #ff1493;
+      box-shadow:
+        0 0 20px #ff1493,
+        0 0 40px #ff1493,
+        0 0 80px #ff1493,
+        0 0 120px #ff1493;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ff1493;
+    }
+
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 75px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+
+      25% {
+        transform: rotate(-45deg) scale(1.12);
+      }
+
+      50% {
+        transform: rotate(-45deg) scale(1);
+      }
+
+      75% {
+        transform: rotate(-45deg) scale(1.08);
+      }
+    }
+
+    h1 {
+      color: white;
+      font-size: clamp(30px, 8vw, 65px);
+      text-shadow:
+        0 0 10px #ff69b4,
+        0 0 25px #ff1493,
+        0 0 50px #ff1493;
+      animation: glow 2s infinite alternate;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      color: #ffb6d9;
+      font-size: 20px;
+      text-shadow: 0 0 15px #ff1493;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow:
+          0 0 10px #ff69b4,
+          0 0 20px #ff1493;
+      }
+
+      to {
+        text-shadow:
+          0 0 20px #ff69b4,
+          0 0 40px #ff1493,
+          0 0 70px #ff1493;
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      color: #fff;
+      font-size: 20px;
+      pointer-events: none;
+      animation: float 4s linear forwards;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-100vh) scale(1.5) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="heart"></div>
+
+    <h1>Love You Seema & Lola 😻💕</h1>
+
+    <div class="subtitle">
+      Forever & Always ❤️
+    </div>
+  </div>
+
+  <script>
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+
+      sparkle.className = "sparkle";
+
+      const emojis = ["💕", "💗", "💖", "✨", "😻", "❤️", "💞"];
+      sparkle.textContent =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = "100vh";
+      sparkle.style.fontSize = (15 + Math.random() * 25) + "px";
+      sparkle.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 7000);
+    }
+
+    setInterval(createSparkle, 250);
+  </script>
+
+</body>
+</html>
